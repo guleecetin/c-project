@@ -1,0 +1,80 @@
+ System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sorucevap
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string cevap;
+            int soru = 1;
+            if (soru == 1)
+            {
+                Console.WriteLine("türkiyenin başkenti neresidir?");
+                Console.WriteLine("A)ANKARA");
+                Console.WriteLine("B)İSTANBUL");
+                Console.WriteLine("C)HATAY");
+                Console.WriteLine("D)MUĞLA");
+                Console.WriteLine("cevabınız:");
+                cevap = Console.ReadLine();
+                if (cevap == "A")
+                {
+                    soru++;
+
+
+                }
+
+                else
+                {
+                    Console.WriteLine("toplam puanınız :0");
+                }
+            }
+            if (soru == 2)
+            {
+                Console.WriteLine("Cumhuriyet kaç yılında ilan edildi?");
+                Console.WriteLine("A)1924");
+                Console.WriteLine("B)1918");
+                Console.WriteLine("C)1923");
+                Console.WriteLine("D)1919");
+                Console.WriteLine("cevabınız:");
+                cevap = Console.ReadLine();
+                if (cevap == "C")
+                {
+                    soru++;
+                }
+                else
+                {
+                    Console.WriteLine("yarışma bitti toplam puan:1");
+                }
+
+
+            }
+            if (soru == 3)
+            {
+                Console.WriteLine("KADINLARA SEÇME VE SEÇİLME HAKKI NE ZAMAN VERİLDİ?");
+                Console.WriteLine("A)1934");
+                Console.WriteLine("B)1928");
+                Console.WriteLine("C)1913");
+                Console.WriteLine("D)1927");
+                Console.WriteLine("cevabınız:");
+                cevap = Console.ReadLine();
+                if (cevap == "A")
+                {
+                    Console.WriteLine("TEBRİKLER BÜTÜN SORULARA DOĞRU CEVAP VERDİNİZ");
+                }
+                else
+                {
+                    Console.WriteLine("yarışma bitti toplam puan:2");
+                }
+
+
+
+                Console.Read();
+            }
+        }
+    }
+}

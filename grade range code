@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace uygulama4
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("lütfen birinci notunuzu giriniz");
+            int birincinot = Convert.ToInt32(Console.ReadLine());
+           
+            int ikincinot = Convert.ToInt32(Console.ReadLine());
+           
+            int ucuncunot = Convert.ToInt32(Console.ReadLine());
+            int sonuc = (birincinot + ikincinot + ucuncunot) / 3;
+            
+            if (sonuc > 80 && sonuc < 100)
+            {
+                Console.WriteLine("notunuz:A+");
+
+            }
+            else if (sonuc > 60 && sonuc < 80)
+            {
+                Console.WriteLine("notunuz :A");
+
+            }
+            else if (sonuc > 40 && sonuc < 60)
+            {
+                Console.WriteLine("notunuz :B+");
+            }
+            else
+            {
+                Console.WriteLine("notunuz: F");
+            }
+            Console.ReadLine();
+        }
+    }
+}

@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ortalamabulma
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int not1, not2, ortalama;
+            Console.Write("not1:");
+            not1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("not2:");
+            not2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("ortalama:");
+            ortalama = (not1 + not2) / 2;
+            Console.WriteLine(ortalama);
+            Console.Read();
+        }
+    }
+}

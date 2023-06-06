@@ -1,0 +1,256 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace uygulama18
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int toplamfiyat = 0;
+            string secim;
+            Console.WriteLine("*******************************************************************************************");
+            Console.WriteLine();
+            Console.WriteLine("**   Türkçe kitap kategorileri            **            Yabancı kitap kategorileri       **");
+            Console.WriteLine();
+            Console.WriteLine("**   1-çalıkuşu :Reşat Nuri               **            7-Tuna Kılavuzu:Jules Verne      **");
+            Console.WriteLine();
+            Console.WriteLine("**   2-yaban:Yakup Kadri                  **            8-Bir kuzey macerası:jack london **");
+            Console.WriteLine();
+            Console.WriteLine("**   3-Sinekli bakkal:Halide Edip         **            9-Altıncı Koğuş:Anton Cehov      **");
+            Console.WriteLine();
+            Console.WriteLine("**   4-Tehlikeli oyunlar:Oğuz Atay        **            10-Kumarbaz:Dostoyevski          **");
+            Console.WriteLine();
+            Console.WriteLine("**   5-Geçtiğim günlerden;H.A.Yücel       **            11-İki şehrin hikayesi:C.Dickens **");
+            Console.WriteLine();
+            Console.WriteLine("**   6-Kuyucaklı yusuf:S.Ali              **            12-Vişne Bahçesi:Anton Çehov     **");
+            Console.WriteLine();
+            Console.WriteLine("*******************************************************************************************");
+            Console.WriteLine();
+            Console.WriteLine("*****  İşlemler Menüsü  *****");
+            Console.WriteLine();
+            Console.WriteLine("1-FiYAT SORGULAMA");
+            Console.WriteLine("2-YENİ OKUR KAYDI");
+            Console.WriteLine("3-GÜNÜN KİTABI");
+            Console.WriteLine("4-KİTAP ARŞİVİ");
+            Console.WriteLine("5-YENİ KİTAP SATIN AL");
+            Console.WriteLine("6-OYUN");
+            Console.WriteLine();
+            Console.WriteLine("Yapmak istediğiniz işlemin numarası:");
+            char islem;
+            islem = Convert.ToChar(Console.ReadLine());
+            if (islem == '1')
+            {
+                Console.WriteLine();
+                Console.WriteLine("fiyatını öğrenmek istediğiniz kitabın numarasını girin:");
+                string numara;
+                numara = Console.ReadLine();
+                switch (numara)
+                {
+                    case "1":
+                        Console.Write("çalıkuşu 71 tl");
+                        break;
+
+                    case "2":
+                        Console.Write("yaban 49 tl");
+                        break;
+                    case "3":
+                        Console.Write("sinekli bakkal 30 tl");
+                        break;
+                    case "4":
+                        Console.Write("tehlikeli oyunlar 27 tl");
+                        break;
+                    case "5":
+                        Console.Write("geçtiğimiz günlerden 33 tl");
+                        break;
+                    case "6":
+                        Console.Write("kuyucaklı yusuf 47 tl");
+                        break;
+                    case "7":
+                        Console.Write("Tuna Kılavuzu 45 tl");
+                        break;
+                    case "8":
+                        Console.Write("Bir kuzey macerası 39 tl");
+                        break;
+                    case "9":
+                        Console.Write("kuyucaklı yusuf 81 tl");
+                        break;
+                    case "10":
+                        Console.Write("kumarbaz 63 tl");
+                        break;
+                    case "11":
+                        Console.Write("iki şehrin hikayesi 77 tl");
+                        break;
+                    case "12":
+                        Console.Write("vişne bahçesi 41 tl");
+                        break;
+                    default:
+                        Console.WriteLine("Böyle bir kitap mevcut değil");
+                        break;
+                }
+
+
+
+            }
+
+            if (islem == '2')
+            {
+                Console.WriteLine();
+                Console.WriteLine("***** yeni oku kaydı*****");
+                string ad, soyad, universite;
+                Console.Write("adınız:");
+                ad = Console.ReadLine();
+                Console.Write("soyadınız:");
+                soyad = Console.ReadLine();
+                Console.Write("universite adı:");
+                universite = Console.ReadLine();
+
+                string dosya = "C:\\Users\\gulen\\OneDrive\\Masaüstü\\okurr.txt ";
+                StreamWriter sw = new StreamWriter(dosya);
+                sw.WriteLine("adınız:" + ad);
+                sw.WriteLine("soyadınız:" + soyad);
+                sw.WriteLine("üniversiteniz:" + universite);
+                sw.Close();
+            }
+            if (islem == '3')
+            {
+                Console.WriteLine();
+                Console.WriteLine("********************************");
+                Console.WriteLine();
+                Console.WriteLine("***** bugünün kitabı : Çalıkuşu  *****");
+                Console.WriteLine();
+                Console.WriteLine("*********************************");
+
+            }
+            if (islem == '4')
+            {
+                Console.WriteLine();
+                Console.WriteLine("********************************");
+                Console.WriteLine();
+                FileStream fs = new FileStream("C:\\Users\\gulen\\OneDrive\\Masaüstü\\Kitaplar.txt", FileMode.Open, FileAccess.Read);
+                StreamReader sr = new StreamReader(fs);
+                string metin = sr.ReadLine();
+                while (metin != null)
+                {
+                    Console.WriteLine(metin);
+                    metin = sr.ReadLine();
+                }
+                sr.Close();
+                fs.Close();
+
+                Console.WriteLine();
+                Console.WriteLine("*********************************");
+
+            }
+            if (islem == '5')
+            {
+                for (int i = 1; i < 100; i++)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("alacağınız kitabın numarası:");
+                    secim = Console.ReadLine();
+                    if (secim == "1")
+                    {
+                        toplamfiyat = toplamfiyat + 71;
+                    }
+                    else if (secim == "2")
+                    {
+                        toplamfiyat = toplamfiyat + 49;
+                    }
+                    else if (secim == "3")
+                    {
+                        toplamfiyat = toplamfiyat + 30;
+                    }
+                    else if (secim == "4")
+                    {
+                        toplamfiyat = toplamfiyat + 27;
+                    }
+                    else if (secim == "5")
+                    {
+                        toplamfiyat = toplamfiyat + 33;
+                    }
+                    else if (secim == "6")
+                    {
+                        toplamfiyat = toplamfiyat + 47;
+                    }
+                    else if (secim == "7")
+                    {
+                        toplamfiyat = toplamfiyat + 45;
+                    }
+                    else if (secim == "8")
+                    {
+                        toplamfiyat = toplamfiyat + 39;
+                    }
+                    else if (secim == "9")
+                    {
+                        toplamfiyat = toplamfiyat + 81;
+                    }
+                    else if (secim == "10")
+                    {
+                        toplamfiyat = toplamfiyat + 63;
+                    }
+                    else if (secim == "11")
+                    {
+                        toplamfiyat = toplamfiyat + 77;
+                    }
+                    else if (secim == "12")
+                    {
+                        toplamfiyat = toplamfiyat + 41;
+                    }
+                    else
+
+                        Console.WriteLine("böyle bir kitap numarası yok");
+                    Console.WriteLine();
+                    Console.Write("başka bir kitap almak ister misiniz?");
+                    string cevap = Console.ReadLine();
+                    if (cevap == "hayır")
+
+                        break;
+                }
+                Console.WriteLine("toplam tutar:" + toplamfiyat);
+
+            }
+            if (islem == '6')
+            {
+                Console.WriteLine();
+                int tahmin = 0;
+                Random rnd = new Random();
+                int sayı = rnd.Next(1, 100);
+                while (sayı != tahmin)
+                {
+                    Console.Write("sayı giriniz:");
+                    tahmin = Convert.ToInt16(Console.ReadLine());
+                    if (tahmin > sayı)
+                    {
+                        Console.WriteLine("daha küçük sayı girin");
+                    }
+                    if (tahmin < sayı)
+                    {
+                        Console.WriteLine("daha büyük sayı girin");
+                    }
+                    if (tahmin == sayı)
+                    {
+                        Console.WriteLine("bildiniz");
+                        break;
+                    }
+
+                }
+
+
+
+
+
+
+
+                Console.Read();
+
+
+            }
+        }
+    }
+}
